@@ -61,7 +61,7 @@ function MovieLandingPage() {
             }
             <div style={{ width: '85%', margin: '1rem auto' }}>
 
-                <h2>최신 개봉작</h2>
+                <h2>최신 개봉작들</h2>
                 <hr />
 
                 {/* Movie Grid Cards */}
