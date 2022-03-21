@@ -18,9 +18,9 @@ function MovieDetail(props) {
 
     useEffect(() => {
 
-        let endpointCrew = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
+        let endpointCrew = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}&language=ko-KR`;
 
-        let endprintInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
+        let endprintInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}&language=ko-KR`;
 
         // console.log(props.match)
 
