@@ -4,7 +4,7 @@ import MovieMainImage from '../LandingPage/Sections/MovieMainImage';
 import MovieInfo from './Sections/MovieInfo';
 import MovieGridCards from '../commons/MovieGridCards';
 import { Row } from 'antd';
-import Favorite from './Sections/MovieFavorite';
+import MovieFavorite from './Sections/MovieFavorite';
 
 function MovieDetail(props) {
 
@@ -20,11 +20,11 @@ function MovieDetail(props) {
 
         let endpointCrew = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
 
-        let endpintInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
+        let endprintInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
 
         // console.log(props.match)
 
-        fetch(endpintInfo)
+        fetch(endprintInfo)
             .then(response => response.json())
             .then(response => {
                 console.log(response)
@@ -62,7 +62,7 @@ function MovieDetail(props) {
                 {/* 페이버릿 버튼 */}
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                     {/* localStorage에 있는 값 가져오기 */}
-                    <Favorite movieInfo={Movie} movieId={movieId} userFrom={localStorage.getItem('userId')} />
+                    <MovieFavorite movieInfo={Movie} movieId={movieId} userFrom={localStorage.getItem('userId')} />
                 </div>
 
 
@@ -77,7 +77,7 @@ function MovieDetail(props) {
                 {/* Actors Grid */}
 
                 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
-                    <button onClick={toggleActorView}> Toggle Actor View </button>
+                    <button onClick={toggleActorView}> 배우 정보 보기 </button>
                 </div>
 
 
