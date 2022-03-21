@@ -34,7 +34,7 @@ function MovieFavorite(props) {
 
     return (
         <div>
-            <button>Favorite</button>
+            <button>좋아요</button>
         </div>
     );
 }
