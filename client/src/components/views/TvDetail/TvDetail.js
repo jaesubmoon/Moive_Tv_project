@@ -4,7 +4,7 @@ import MainImage from '../LandingPage/Sections/MainImage';
 import TvInfo from './Sections/TvInfo';
 import TvGridCards from '../commons/TvGridCards';
 import { Row } from 'antd';
-import TvFavorite from './Sections/TvFavorite';
+import Favorite from './Sections/Favorite';
 
 function TvDetail(props) {
 
@@ -25,7 +25,7 @@ function TvDetail(props) {
         fetch(endpintInfo)
             .then(response => response.json())
             .then(response => {
-                console.log(response)
+                //console.log(response)
                 setTv(response);
             })
 
@@ -56,7 +56,7 @@ function TvDetail(props) {
             {/* Body */}
             <div style={{ width: '85%', margin: '1rem auto' }}>
                 <div style={{display:'flex', justifyContent:'flex-end'}}>
-                  <TvFavorite/>
+                <Favorite TvInfo={Tv} tvId={tvId} userFrom={localStorage.getItem('userId')} />
                 </div>
                 {/* TvInfo */}
 

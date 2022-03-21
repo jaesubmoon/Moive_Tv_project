@@ -9,13 +9,13 @@ const favoriteSchema = mongoose.Schema({
     tvId: {
         type: String
     },
-   tvTitle: {
+    tvTitle: {
         type: String
     },
    tvPost: {
         type: String
     },
-   tvRunTime: {
+    tvRunTime: {
         type: String
     }
 }, { timestamps: true })
