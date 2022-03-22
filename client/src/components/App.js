@@ -4,6 +4,7 @@ import Auth from "../hoc/auth";
 // pages for this product
 import TvLandingPage from "./views/LandingPage/TvLandingPage.js";
 import MovieLandingPage from "./views/LandingPage/MovieLandingPage.js";
+import CalenderPage from "./CalenderComponents/App/App2.js";
 import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
@@ -23,6 +24,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Auth(MovieLandingPage, null)} />
           <Route exact path="/tv" component={Auth(TvLandingPage, null)} />
+          <Route exact path="/calender" component={Auth(CalenderPage, false)}/>
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/tv/:tvId" component={Auth(TvDetail, null)} />
