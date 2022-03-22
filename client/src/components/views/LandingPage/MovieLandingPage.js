@@ -55,13 +55,13 @@ function MovieLandingPage() {
             {MainMovieImage &&
                 <MovieMainImage
                     image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
-                    title={MainMovieImage.original_title}
+                    title={MainMovieImage.title}
                     text={MainMovieImage.overview}
                 />
             }
             <div style={{ width: '85%', margin: '1rem auto' }}>
 
-                <h2>최신 개봉작들</h2>
+                <h2>최신 개봉작</h2>
                 <hr />
 
                 {/* Movie Grid Cards */}

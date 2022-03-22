@@ -10,6 +10,7 @@ import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
 import TvDetail from './views/TvDetail/TvDetail';
 import MovieDetail from './views/MovieDetail/MovieDetail';
+import MovieLikeListView from './views/MovieDetail/Sections/MovieLikeListView';
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/tv/:tvId" component={Auth(TvDetail, null)} />
           <Route exact path="/movie/:movieId" component={Auth(MovieDetail, null)} />
+          <Route exact path="/likeList" component={Auth(MovieLikeListView, null)} />
         </Switch>
       </div>
       <Footer />
