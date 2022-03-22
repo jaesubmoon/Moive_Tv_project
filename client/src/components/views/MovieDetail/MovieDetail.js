@@ -4,7 +4,7 @@ import MovieMainImage from '../LandingPage/Sections/MovieMainImage';
 import MovieInfo from './Sections/MovieInfo';
 import MovieGridCards from '../commons/MovieGridCards';
 import { Row } from 'antd';
-import Favorite from './Sections/MovieFavorite';
+import MovieLikeList from './Sections/MovieLikeList';
 
 function MovieDetail(props) {
 
@@ -15,16 +15,17 @@ function MovieDetail(props) {
     const [Casts, setCasts] = useState([]);
     // toggle클릭시 보여주게 하기위해서 추가 : ActorToggle이 true일때 뿌려주기
     const [ActorToggle, setActorToggle] = useState(false);
+    const [LikeBtn, setLikeBtn] = useState(true);
 
     useEffect(() => {
 
-        let endpointCrew = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
+        let endpointCrew = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}&language=ko-KR`;
 
-        let endpintInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
+        let endprintInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}&language=ko-KR`;
 
         // console.log(props.match)
 
-        fetch(endpintInfo)
+        fetch(endprintInfo)
             .then(response => response.json())
             .then(response => {
                 console.log(response)
@@ -45,13 +46,17 @@ function MovieDetail(props) {
         setActorToggle(!ActorToggle)
     };
 
+    const LikeBtnLook = () => {
+        setLikeBtn(!LikeBtn)
+    }
+
     return (
         <div>
             {/* Header */}
 
             <MovieMainImage
                 image={`${IMAGE_BASE_URL}w1280${Movie.backdrop_path}`}
-                title={Movie.original_title}
+                title={Movie.title}
                 text={Movie.overview}
             />
 
@@ -59,11 +64,22 @@ function MovieDetail(props) {
             {/* Body */}
             <div style={{ width: '85%', margin: '1rem auto' }}>
 
-                {/* 페이버릿 버튼 */}
+                {/* 좋아요 버튼 */}
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    {/* {LikeBtn && */}
+                    {/* <div onClick={LikeBtnLook}> */}
                     {/* localStorage에 있는 값 가져오기 */}
-                    <Favorite movieInfo={Movie} movieId={movieId} userFrom={localStorage.getItem('userId')} />
+                    <MovieLikeList movieInfo={Movie} movieId={movieId} userId={localStorage.getItem('userId')} />
+                    {/* </div> */}
+                    {/* } */}
+                    {/* 찜 목록으로 이동 */}
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', margintop: '10px' }}>
+                        <button><a href="/likeList">찜 목록</a></button>
+                    </div>
+
                 </div>
+
 
 
                 {/* Movie Info */}
@@ -77,7 +93,7 @@ function MovieDetail(props) {
                 {/* Actors Grid */}
 
                 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
-                    <button onClick={toggleActorView}> Toggle Actor View </button>
+                    <button onClick={toggleActorView}> 배우 정보 보기 </button>
                 </div>
 
 
@@ -99,7 +115,7 @@ function MovieDetail(props) {
                 }
 
             </div>
-        </div>
+        </div >
     );
 }
 

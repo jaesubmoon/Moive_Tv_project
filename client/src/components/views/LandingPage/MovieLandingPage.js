@@ -15,7 +15,7 @@ function MovieLandingPage() {
     // useEffect : 컴포넌트 부수효과 관리 (API호출, 이벤트 처리 등)
     useEffect(() => {
         // 영화 정보를 가져오는 API 적용
-        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=ko-KR&page=1`;
 
         fetchMovies(endpoint);
 
@@ -41,7 +41,7 @@ function MovieLandingPage() {
 
     const loadMoreItems = () => {
         // 저장한 현재페이지에 + 1 값으로 api에서 불러옴
-        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${CurrentPage + 1}`;
+        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=ko-KR&page=${CurrentPage + 1}`;
         fetchMovies(endpoint);
     }
 
@@ -55,13 +55,13 @@ function MovieLandingPage() {
             {MainMovieImage &&
                 <MovieMainImage
                     image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
-                    title={MainMovieImage.original_title}
+                    title={MainMovieImage.title}
                     text={MainMovieImage.overview}
                 />
             }
             <div style={{ width: '85%', margin: '1rem auto' }}>
 
-                <h2>Movies by latest</h2>
+                <h2>최신 개봉작</h2>
                 <hr />
 
                 {/* Movie Grid Cards */}
@@ -85,7 +85,7 @@ function MovieLandingPage() {
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 {/* 버튼 클릭시 */}
-                <button onClick={loadMoreItems}>Load More</button>
+                <button onClick={loadMoreItems}>더보기</button>
             </div>
         </div>
     )
