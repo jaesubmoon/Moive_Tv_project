@@ -5,6 +5,7 @@ import MovieInfo from './Sections/MovieInfo';
 import MovieGridCards from '../commons/MovieGridCards';
 import { Row } from 'antd';
 import MovieLikeList from './Sections/MovieLikeList';
+import './MovieDetail.css';
 
 function MovieDetail(props) {
 
@@ -72,10 +73,11 @@ function MovieDetail(props) {
                     <MovieLikeList movieInfo={Movie} movieId={movieId} userId={localStorage.getItem('userId')} />
                     {/* </div> */}
                     {/* } */}
-                    {/* 찜 목록으로 이동 */}
 
+
+                    {/* 찜 목록으로 이동 */}
                     <div style={{ display: 'flex', justifyContent: 'flex-end', margintop: '10px' }}>
-                        <button><a href="/likeList">찜 목록</a></button>
+                        <button className='likeListBtn'><a href="/likeList">찜 목록</a></button>
                     </div>
 
                 </div>

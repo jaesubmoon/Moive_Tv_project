@@ -25,24 +25,20 @@ function MovieLikeListView(props) {
     }, []);
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
-            <h3>찜 목록</h3>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>사진</th>
-                        <th>제목</th>
-                        <th>러닝타임</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        data.map(function (movie, index) {
-                            return <MovieLikeListItem movie={movie} key={index} />
-                        })
-                    }
-                </tbody>
-            </table>
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem', flexDirection: 'column', padding: '20%', paddingTop: '0' }}>
+            <h3 style={{ border: '1px solid', borderRadius: '6px', textAlign: 'center' }}>찜 목록</h3>
+            <div>
+                <span style={{ display: 'inline-block', width: '20%', textAlign: 'center', border: '1px solid', marginRight: '1%' }}>포스터</span>
+                <span style={{ display: 'inline-block', width: '45%', textAlign: 'center', border: '1px solid', marginRight: '1%' }}>제목</span>
+                <span style={{ display: 'inline-block', width: '22%', textAlign: 'center', border: '1px solid', marginRight: '1%' }}>러닝타임</span>
+                <span style={{ display: 'inline-block', width: '10%', textAlign: 'center', border: '1px solid' }}>삭제</span>
+            </div>
+            {
+                data.map(function (movie, index) {
+                    return <MovieLikeListItem movie={movie} key={index} />
+                })
+            }
+
 
         </div>
     );
