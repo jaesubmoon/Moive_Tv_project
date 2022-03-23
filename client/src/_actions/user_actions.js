@@ -8,7 +8,7 @@ import {
 import { USER_SERVER } from '../components/Config.js';
 
 export function registerUser(dataToSubmit){
-    const request = axios.post(`${USER_SERVER}/register`,dataToSubmit)
+    const request = axios.post(`http://localhost:8080/join`,dataToSubmit)
         .then(response => response.data);
     
     return {

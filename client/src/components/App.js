@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/tv" component={Auth(TvLandingPage, null)} />
           <Route exact path="/calender" component={Auth(CalenderPage, false)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
-          <Route exact path="/register" component={Auth(RegisterPage, false)} />
+          <Route exact path="/join" component={Auth(RegisterPage, false)} />
           <Route exact path="/tv/:tvId" component={Auth(TvDetail, null)} />
           <Route exact path="/movie/:movieId" component={Auth(MovieDetail, null)} />
           <Route exact path="/likeList" component={Auth(MovieLikeListView, null)} />   

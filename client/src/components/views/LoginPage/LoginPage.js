@@ -82,4 +82,4 @@ function LoginPage(props) {
     )
   }
   
-export default withRouter(LoginPage);
+export default LoginPage;
