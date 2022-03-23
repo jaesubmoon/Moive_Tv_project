@@ -4,6 +4,7 @@ import { API_URL, API_KEY, IMAGE_BASE_URL } from '../../ConfigMovie';
 import MovieMainImage from './Sections/MovieMainImage'
 import MovieGridCards from '../commons/MovieGridCards';
 import { Row } from 'antd';
+import './MovieLandingPage.css';
 
 function MovieLandingPage() {
     // json 값이 여러개이므로 배열로 state 생성
@@ -87,7 +88,7 @@ function MovieLandingPage() {
                 {/* 버튼 클릭시 */}
                 <button onClick={loadMoreItems}>더보기</button>
             </div>
-        </div>
+        </div >
     )
 }
 
