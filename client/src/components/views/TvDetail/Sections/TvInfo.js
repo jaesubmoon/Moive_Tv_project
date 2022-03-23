@@ -9,10 +9,10 @@ function  TvInfo(props) {
         <Descriptions title="방영정보" bordered>
             <Descriptions.Item label="제목">{tv.name}</Descriptions.Item>
             <Descriptions.Item label="최초공개일">{tv.first_air_date}</Descriptions.Item>
-            <Descriptions.Item label="최근 공개 회차">{tv.last_air_date}</Descriptions.Item>
-            <Descriptions.Item label="런타임">{tv.episode_run_time}</Descriptions.Item>
-            <Descriptions.Item label="평균" span={2}>
-                {tv.vote_average}
+            <Descriptions.Item label="최근공개회차">{tv.last_air_date}</Descriptions.Item>
+            <Descriptions.Item label="러닝타임">{tv.episode_run_time}</Descriptions.Item>
+            <Descriptions.Item label="평점" span={2}>
+                {tv.vote_average}점
             </Descriptions.Item>
             <Descriptions.Item label="득표수">{tv.vote_count}</Descriptions.Item>
             <Descriptions.Item label="국가">{tv.origin_country}</Descriptions.Item>
