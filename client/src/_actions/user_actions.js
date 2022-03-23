@@ -18,9 +18,9 @@ export function registerUser(dataToSubmit){
 }
 
 export function loginUser(dataToSubmit){
-    const request = axios.post(`${USER_SERVER}/login`,dataToSubmit)
+    const request = axios.post('http://localhost:8080/login',dataToSubmit)
                 .then(response => response.data);
-
+        
     return {
         type: LOGIN_USER,
         payload: request
