@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React from 'react';
 import { IMAGE_BASE_URL } from '../../../ConfigMovie';
+import '../../styles/bootstrap.css'
 
 function MovieLikeListItem(props) {
 
@@ -17,22 +18,22 @@ function MovieLikeListItem(props) {
 
 
     return (
-        <div style={{ marginBottom: '10px', marginTop: '10px', border: '1px solid' }}>
-            <span style={{ display: 'inline-block', width: '20%', marginRight: '10px', float: 'left' }}><img style={{ width: '100%' }} src={`${IMAGE_BASE_URL}w200${props.movie.moviePost}`} /></span>
+
+        <div style={{ marginBottom: '10px', marginTop: '10px', border: '1px solid', borderRadius: '4px' }}>
+            <span style={{ display: 'inline-block', width: '20%', marginRight: '10px', float: 'left' }}><img style={{ width: '100%', borderRadius: '8px', padding: '3px' }} src={`${IMAGE_BASE_URL}w200${props.movie.moviePost}`} /></span>
             <span style={{
                 display: 'inline-block', width: '45%', textAlign: 'center',
                 float: 'left', borderRight: '1px solid', height: '308px', lineHeight: '308px'
             }}>{props.movie.movieTitle}</span>
             <span style={{
-                display: 'inline-block',
+                display: 'inline-block', background: '#f5f5f3',
                 width: '24%', textAlign: 'center', float: 'left',
                 lineHeight: '308px', borderRight: '1px solid'
             }}>{props.movie.movieRuntime} 분</span>
 
-            <span style={{ display: 'inline-block', width: '8%', textAlign: 'center', float: 'left', marginTop: '140px' }}>
-                <button onClick={onDeleteItem}>삭제</button>
+            <span style={{ display: 'inline-block', width: '8%', textAlign: 'center', float: 'left', marginTop: '140px', marginLeft: '6px' }}>
+                <button class="btn-close" aria-label="Close" onClick={onDeleteItem}></button>
             </span>
-
         </div>
     );
 }

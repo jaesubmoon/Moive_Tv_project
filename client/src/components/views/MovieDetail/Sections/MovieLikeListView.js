@@ -26,11 +26,11 @@ function MovieLikeListView(props) {
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem', flexDirection: 'column', padding: '20%', paddingTop: '0' }}>
-            <h3 style={{ border: '1px solid', borderRadius: '6px', textAlign: 'center' }}>찜 목록</h3>
+            <h3 style={{ color: 'white', background: '#f1aeb5', border: '1px solid', borderRadius: '4px', textAlign: 'center', padding: '2px' }}>LIKE LIST ♥</h3>
             <div>
-                <span style={{ display: 'inline-block', width: '20%', textAlign: 'center', border: '1px solid', marginRight: '1%' }}>포스터</span>
-                <span style={{ display: 'inline-block', width: '45%', textAlign: 'center', border: '1px solid', marginRight: '1%' }}>제목</span>
-                <span style={{ display: 'inline-block', width: '22%', textAlign: 'center', border: '1px solid', marginRight: '1%' }}>러닝타임</span>
+                <span style={{ display: 'inline-block', width: '20%', textAlign: 'center', border: '1px solid', marginRight: '1%', borderRadius: '4px', background: '#f5f5f3' }}>포스터</span>
+                <span style={{ display: 'inline-block', width: '45%', textAlign: 'center', border: '1px solid', marginRight: '1%', borderRadius: '4px' }}>제목</span>
+                <span style={{ display: 'inline-block', width: '22%', textAlign: 'center', border: '1px solid', marginRight: '1%', borderRadius: '4px', background: '#f5f5f3' }}>러닝타임</span>
                 <span style={{ display: 'inline-block', width: '10%', textAlign: 'center', border: '1px solid' }}>삭제</span>
             </div>
             {

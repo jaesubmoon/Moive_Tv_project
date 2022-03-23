@@ -25,7 +25,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Auth(MovieLandingPage, null)} />
           <Route exact path="/tv" component={Auth(TvLandingPage, null)} />
-          <Route exact path="/calender" component={Auth(CalenderPage, false)}/>
+          <Route exact path="/calender" component={Auth(CalenderPage, false)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/tv/:tvId" component={Auth(TvDetail, null)} />

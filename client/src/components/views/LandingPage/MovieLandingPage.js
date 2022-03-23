@@ -86,7 +86,7 @@ function MovieLandingPage() {
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 {/* 버튼 클릭시 */}
-                <button onClick={loadMoreItems}>더보기</button>
+                <button className='more' onClick={loadMoreItems}>더보기</button>
             </div>
         </div >
     )
