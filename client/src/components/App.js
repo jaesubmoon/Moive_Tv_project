@@ -30,7 +30,7 @@ function App() {
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/tv/:tvId" component={Auth(TvDetail, null)} />
           <Route exact path="/movie/:movieId" component={Auth(MovieDetail, null)} />
-          <Route exact path="/likeList" component={Auth(MovieLikeListView, null)} />
+          <Route exact path="/likeList" component={Auth(MovieLikeListView, null)} />   
         </Switch>
       </div>
       <Footer />
