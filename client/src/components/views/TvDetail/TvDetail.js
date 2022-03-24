@@ -29,19 +29,19 @@ function TvDetail(props) {
                 setTv(response);
             })
 
-            fetch(endpointCrew)
+        fetch(endpointCrew)
             .then(response => response.json())
             .then(response => {
-  
+
                 setCasts(response.cast);
             })
 
-      
+
 
     }, [])
 
-    const toggleActorView = () =>{
-      setActorToggle(!ActorToggle)
+    const toggleActorView = () => {
+        setActorToggle(!ActorToggle)
     }
 
     return (
@@ -55,9 +55,12 @@ function TvDetail(props) {
             />
             {/* Body */}
             <div style={{ width: '85%', margin: '1rem auto' }}>
-                <div style={{display:'flex', justifyContent:'flex-end'}}>
-                <Favorite TvInfo={Tv} tvId={tvId} userFrom={localStorage.getItem('userId')} />
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <Favorite TvInfo={Tv} tvId={tvId} userFrom={localStorage.getItem('userId')} />
                 </div>
+
+
+
                 {/* TvInfo */}
 
                 <TvInfo
@@ -66,30 +69,30 @@ function TvDetail(props) {
 
                 <br />
                 {/* Actors Grid */}
-        
+
 
                 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
                     <button onClick={toggleActorView}> 배우 정보 보기 </button>
                 </div>
 
                 {ActorToggle &&
-                  <Row gutter={[16, 16]} >
+                    <Row gutter={[16, 16]} >
 
-                      {Casts && Casts.map((cast, index) => (
-                          <React.Fragment key={index}>
-                              <TvGridCards
-                                  image={cast.profile_path ?
-                                      `${IMAGE_BASE_URL}w500${cast.profile_path}` : null}
-                                  charactorName={cast.name}
-                              />
-                          </React.Fragment>
-                      ))}
+                        {Casts && Casts.map((cast, index) => (
+                            <React.Fragment key={index}>
+                                <TvGridCards
+                                    image={cast.profile_path ?
+                                        `${IMAGE_BASE_URL}w500${cast.profile_path}` : null}
+                                    charactorName={cast.name}
+                                />
+                            </React.Fragment>
+                        ))}
 
-                  </Row>
+                    </Row>
                 }
 
             </div>
-        </div>
+        </div >
     );
 }
 

@@ -23,7 +23,8 @@ function App() {
       <NavBar />
       <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
         <Switch>
-        <Route exact path="/" component={Auth(MovieLandingPage, null)} />
+
+          <Route exact path="/" component={Auth(MovieLandingPage, null)} />
           <Route exact path="/tv" component={Auth(TvLandingPage, null)} />
           <Route exact path="/calender" component={Auth(CalenderPage, false)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
