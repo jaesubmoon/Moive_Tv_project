@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 800vh;
+    height: 80vh;
 }
-.login h3{
+.login h2{
 text-align: center;
 }
 .input {
