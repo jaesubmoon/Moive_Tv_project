@@ -5,8 +5,8 @@ import MovieInfo from './Sections/MovieInfo';
 import MovieGridCards from '../commons/MovieGridCards';
 import { Row } from 'antd';
 import MovieLikeList from './Sections/MovieLikeList';
+import '../styles/bootstrap.css'
 import './MovieDetail.css';
-
 function MovieDetail(props) {
 
     // movieId 불러오기
@@ -65,20 +65,16 @@ function MovieDetail(props) {
             {/* Body */}
             <div style={{ width: '85%', margin: '1rem auto' }}>
 
-                {/* 좋아요 버튼 */}
+
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    {/* {LikeBtn && */}
-                    {/* <div onClick={LikeBtnLook}> */}
+                    {/* 찜 목록으로 이동 */}
+                    <div id="likeListBtn" style={{ display: 'flex', justifyContent: 'flex-end', margintop: '10px' }}>
+                        <button class="btn btn-danger"><a href="/likeList">찜 목록</a></button>
+                    </div>
+
+                    {/* 좋아요 버튼 */}
                     {/* localStorage에 있는 값 가져오기 */}
                     <MovieLikeList movieInfo={Movie} movieId={movieId} userId={localStorage.getItem('userId')} />
-                    {/* </div> */}
-                    {/* } */}
-
-
-                    {/* 찜 목록으로 이동 */}
-                    <div style={{ display: 'flex', justifyContent: 'flex-end', margintop: '10px' }}>
-                        <button className='likeListBtn'><a href="/likeList">찜 목록</a></button>
-                    </div>
 
                 </div>
 
@@ -95,7 +91,7 @@ function MovieDetail(props) {
                 {/* Actors Grid */}
 
                 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
-                    <button onClick={toggleActorView}> 배우 정보 보기 </button>
+                    <button class="btn btn-secondary" onClick={toggleActorView}> 배우 정보 보기 </button>
                 </div>
 
 
