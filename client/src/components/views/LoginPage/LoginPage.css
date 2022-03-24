@@ -4,7 +4,7 @@
     justify-content: center;
     height: 80vh;
 }
-.login h3{
+.login h2{
 text-align: center;
 }
 .input {
@@ -16,7 +16,7 @@ text-align: center;
 .button {
  
     background-color: rgb(66, 92, 240);
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-weight: 700;
     width: 100%;
     border-radius: 40px;

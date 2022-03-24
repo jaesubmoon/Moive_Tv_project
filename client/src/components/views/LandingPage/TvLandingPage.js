@@ -55,7 +55,7 @@ function TvLandingPage() {
             }
             <div style={{ width: '85%', margin: '1rem auto' }}>
 
-                <h2>Movies by latest</h2>
+                <h2>최신 드라마 </h2>
                 <hr />
 
                 {/* Movie Grid Cards */}

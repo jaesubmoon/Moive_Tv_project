@@ -35,7 +35,7 @@ function RegisterPage(props) {
       e.preventDefault();
       var userId = new FormData(document.userId);
      
-      axios.get(`http://localhost:8080/idCheck/${user.userId}`)
+      axios.post('http://localhost:8080/idCheck/'+user.userId)
         .then(
           response => {
             if (response.data === "use") {
@@ -54,16 +54,16 @@ function RegisterPage(props) {
   const onSubmit = (e) => {
       e.preventDefault();
 
-      var join = new FormData(document.join);
+      var frmData = new FormData(document.join);
 
       if(user.userPwd !== user.userconfPwd){
         alert('비밀번호가 일치하지 않습니다')
       }
       else{
-      axios.post('http://localhost:8080/join', join)
+      axios.post('http://localhost:8080/join', frmData)
           .then(
               response => {
-                console.log(response.data)
+                console.log(response)
                   alert("회원가입이 완료되었습니다!");
                   history.push('/login'); //상품 정보 조회 화면으로 이동
               }
@@ -75,7 +75,7 @@ function RegisterPage(props) {
   return (
     <><div id='joinForm' class='join'>
 
-      <form name='join'onReset={onReset}>
+      <form name='join' onSubmit={onSubmit} onReset={onReset}>
         <div><h2>회원가입</h2>
           <div >
             <h4>이름</h4>
@@ -105,7 +105,7 @@ function RegisterPage(props) {
 
 
           <div>
-            <button type='submit' value='등록' name='submit' class='button' onSubmit={onSubmit} >등록</button>
+            <button type='submit' value='등록' name='submit' class='button' >등록</button>
           </div>
 
 
