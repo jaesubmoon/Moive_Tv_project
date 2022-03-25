@@ -12,6 +12,7 @@ import Footer from "./views/Footer/Footer"
 import TvDetail from './views/TvDetail/TvDetail';
 import MovieDetail from './views/MovieDetail/MovieDetail';
 import MovieLikeListView from './views/MovieDetail/Sections/MovieLikeListView';
+import Map from './views/Map/Map';
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -23,7 +24,6 @@ function App() {
       <NavBar />
       <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
         <Switch>
-
           <Route exact path="/" component={Auth(MovieLandingPage, null)} />
           <Route exact path="/tv" component={Auth(TvLandingPage, null)} />
           <Route exact path="/calender" component={Auth(CalenderPage, false)} />
@@ -31,7 +31,8 @@ function App() {
           <Route exact path="/join" component={Auth(RegisterPage, false)} />
           <Route exact path="/tv/:tvId" component={Auth(TvDetail, null)} />
           <Route exact path="/movie/:movieId" component={Auth(MovieDetail, null)} />
-          <Route exact path="/likeList" component={Auth(MovieLikeListView, null)} />   
+          <Route exact path="/likeList" component={Auth(MovieLikeListView, null)} />
+          <Route exact path="/map" component={Auth(Map, null)} />
         </Switch>
       </div>
       <Footer />

@@ -31,7 +31,7 @@ function MovieLikeListView(props) {
                 <span style={{ display: 'inline-block', width: '20%', textAlign: 'center', border: '1px solid', marginRight: '1%', borderRadius: '4px', background: '#f5f5f3' }}>포스터</span>
                 <span style={{ display: 'inline-block', width: '45%', textAlign: 'center', border: '1px solid', marginRight: '1%', borderRadius: '4px' }}>제목</span>
                 <span style={{ display: 'inline-block', width: '22%', textAlign: 'center', border: '1px solid', marginRight: '1%', borderRadius: '4px', background: '#f5f5f3' }}>러닝타임</span>
-                <span style={{ display: 'inline-block', width: '10%', textAlign: 'center', border: '1px solid' }}>삭제</span>
+                <span style={{ display: 'inline-block', width: '10%', textAlign: 'center', border: '1px solid', borderRadius: '4px' }}>삭제</span>
             </div>
             {
                 data.map(function (movie, index) {
