@@ -31,21 +31,22 @@ function LoginPage(props) {
 
     var frmData = new FormData(document.login);
 
-    axios.post('http://localhost:8080/login', frmData)
+    axios.post('http://localhost:8080/login/',frmData)
     .then(
         response => {
-          console.log(response);
-          if (response.payload.loginSuccess) {
+          if (response.data==="success") {
             console.log("성공",response);
+            alert("로그인 성공!\n메인화면으로 이동합니다");
             history.push("/");
           } else {
             console.log("실패",response);
-            alert(response.payload.message);
+            alert("아이디 또는 비밀번호를 확인해주세요!");
           }
         })
         .catch((err) => {
           console.log(err);
         });
+
         //   console.log(response);
         //   if (response.payload.loginSuccess) {
         //     props.history.push("/");
@@ -93,13 +94,13 @@ function LoginPage(props) {
             <h2>로그인</h2>
             <div>
               <h4>아이디</h4>
-              <input class='input' type='text' name='id' value={userId} onChange={onIdHandeler} />
+              <input class='input' id ='userId' type='text' name='userId' value={userId} onChange={onIdHandeler} />
 
             </div>
 
             <div>
               <h4>비밀번호</h4>
-              <input class='input' type='password' name='password' value={userPwd} onChange={onPwdHandeler} />
+              <input class='input' id='userPwd' type='password' name='userPwd' value={userPwd} onChange={onPwdHandeler} />
             </div>
 
             <div>
