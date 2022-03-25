@@ -30,14 +30,45 @@ function LoginPage(props) {
     e.preventDefault();
 
     var frmData = new FormData(document.login);
+
     axios.post('http://localhost:8080/login', frmData)
-        .then(
-            response => {
-              console.log(response)
-                alert("로그인 성공!");
-                history.push('/'); //상품 정보 조회 화면으로 이동
-            }
-        );
+    .then(
+        response => {
+          console.log(response);
+          if (response.payload.loginSuccess) {
+            console.log("성공",response);
+            history.push("/");
+          } else {
+            console.log("실패",response);
+            alert(response.payload.message);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+        //   console.log(response);
+        //   if (response.payload.loginSuccess) {
+        //     props.history.push("/");
+        //   } else {
+        //     alert(response.payload.message);
+        //   }
+        // })
+        // .catch((err) => {
+        //   console.log(err);
+        // });
+
+
+
+
+
+    // axios.post('http://localhost:8080/login', frmData)
+    //     .then(
+    //         response => {
+    //           console.log(response)
+    //             alert("로그인 성공!");
+    //             history.push('/'); //상품 정보 조회 화면으로 이동
+    //         }
+    //     );
          
 }
 // console.log("id",userId)
@@ -51,24 +82,13 @@ function LoginPage(props) {
 
     // dispatch(loginUser(body))
     //   .then((response) => {
-    //     console.log(response);
-    //     if (response.payload.loginSuccess) {
-    //       console.log("성공",response);
-    //       history.push("/");
-    //     } else {
-    //       console.log("실패",response);
-    //       alert(response.payload.message);
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+
 
  
     return(
-      
+      <>
        <div class='login' style={{ display: 'flex', justifyContent: 'center' }}>
-      <form name='frmlogin' onSubmit={onSubmit}>
+      <form name='login' onSubmit={onSubmit}>
       <div>
             <h2>로그인</h2>
             <div>
@@ -90,10 +110,11 @@ function LoginPage(props) {
         </div>
 
         </form>
-        </div>
+        </div></>
 
   
     )
-  }
+    }
+  
   
 export default LoginPage;
