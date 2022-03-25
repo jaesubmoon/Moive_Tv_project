@@ -67,7 +67,7 @@ function MovieDetail(props) {
 
 
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    {/* 찜 목록으로 이동 */}
+                    {/* 찜 리스트로 이동 */}
                     <div id="likeListBtn" style={{ display: 'flex', justifyContent: 'flex-end', margintop: '10px' }}>
                         <button class="btn btn-danger"><a href="/likeList">찜 목록</a></button>
                     </div>
