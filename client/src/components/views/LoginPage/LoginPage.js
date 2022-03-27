@@ -31,7 +31,7 @@ function LoginPage(props) {
 
     var frmData = new FormData(document.login);
 
-    axios.post('http://localhost:8080/login/',frmData)
+    axios.post('http://localhost:8080/loginCheck',frmData)
     .then(
         response => {
           if (response.data==="success") {
